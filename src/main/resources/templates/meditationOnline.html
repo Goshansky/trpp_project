@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../static/css/main/header.css" th:href="@{/css/main/header.css}">
+    <link rel="stylesheet" href="../static/css/main/footer.css" th:href="@{/css/main/footer.css}">
+
+    <link rel="stylesheet" href="../static/css/meditationOnline/main.css" th:href="@{/css/meditationOnline/main.css}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script
+            src="https://kit.fontawesome.com/fd9c503804.js"
+            crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/image/logo/logo.png}">
+    <title>InnerCalmQuest.com</title>
+
+
+    <script src="/js/video.js" defer></script>
+</head>
+
+
+
+<body>
+
+<input type="checkbox" id="menu-toggle">
+<!---Шапка-->
+<header>
+    <!--- Логотип в шапке-->
+    <div class="header-logo">
+        <img src="/image/logo/logo.png" alt="Логотип сайта">
+    </div>
+    <label for="menu-toggle" class="menu-icon"></label>
+    <h1 class="header-title">Найди своё спокойствие!!!</h1>
+
+    <!--- Меню выбора в шапке-->
+    <nav class="header-nav">
+        <ul>
+            <li class="header-menu-item"><a class="header-menu-link" href="/">Главная</a></li>
+            <li><a class="header-menu-link" href="/meditationOnline">Медитируй онлайн</a></li>
+            <li><a class="header-menu-link" href="/meditationMusic">Музыка для медитации</a></li>
+            <li><a class="header-menu-link" href="/articlesUseful">Полезные статьи</a></li>
+            <li><a class="header-menu-link" href="/meditationShop">Магазин</a></li>
+            <li><a class="header-menu-link" href="/feedback">Обратная связь</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Медитировать Онлайн</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Начать</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eSzUNyWh0zg?si=FW37k19CKP-GX1mo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            <h2>Простая техника | 5 мин</h2>
+            <p>В этом видео я расскажу о том, как научиться медитировать.
+                Многие думают, что медитация - это что-то сложное и непонятное,
+                но на самом деле это очень просто! И я расскажу о простой технике медитации,
+                которую можно освоить буквально за 5 минут!</p>
+        </div>
+
+        <div class="card">
+            <h2>Сейчас в тренде</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/F0p2dl_XpMc?si=cDU0iOKLfNe38FlN"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            <h2>Медитация для спокойствия | 7 мин</h2>
+            <p>Выполняя данную медитацию, мы восстанавливаем энергетический ресурс нашего тела и ума. Успокаиваем
+                центральную нервную систему. Настраиваем себя на определенный лад.</p>
+        </div>
+
+        <div class="card">
+            <h2>Медитация дня</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/29VXLjtc-Jo?si=DY6RkVfSURJO5aiD"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            <h2>Медитация на хороший день | 10 мин</h2>
+            <p>Привет! Я Алина и это моя вторая медитация, так как первая (совершенно неожиданно) произвела довольно
+                большой резонанс и пришлась сотням тысяч людей по душе. Сегодняшняя медитация направлена на то, чтобы
+                после её прослушивания ранним утром или в обед, ты зарядился энергией, хорошим настроением и желанием
+                жить и творить!</p>
+        </div>
+
+    </div>
+    <br>
+    <div>
+        <form>
+
+            <fieldset>
+                <legend>Выберите медитацию для себя</legend>
+                <div class="menu-buttons">
+                    <div class="item">
+                        <label for="meditation-options">Я хочу почувствовать...</label>
+                    </div>
+                    <div class="item">
+                        <select id="meditation-options" name="meditation-options">
+                            <option value="1">Спокойствие</option>
+                            <option value="2">Удовлетворение</option>
+                            <option value="3">Концентрацию</option>
+                            <option value="4">Радость</option>
+                            <option value="5">Любовь</option>
+                            <option value="6">Уважение к себе</option>
+                            <option value="7">Гармонию</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="menu-buttons">
+                    <div class="item">
+                        <label>У меня есть...</label>
+                    </div>
+                    <div class="item">
+                        <button type="button" onclick="setDuration(5)">5 мин</button>
+                        <button type="button" onclick="setDuration(10)">10 мин</button>
+                        <button type="button" onclick="setDuration(15)">15 мин</button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <button class="in" type="button" onclick="findMeditation()">Найти</button>
+        </form>
+    </div>
+    <div id="selected-meditation" class="card" >
+        <!-- Здесь будет отображаться выбранное видео после нажатия "Найти" -->
+    </div>
+    <br>
+    <img src="/image/online.jpg" alt="ыыы" class="img">
+    <a href="/meditationVideo" class="link-contents">
+        <span> Все медитации </span>
+    </a>
+
+
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="about">
+            <h2>О разработчиках</h2>
+            <p>
+                Выполнили студенты
+            </p>
+            <p>
+                группы ИКБО-16-22
+            </p>
+            <p>
+                Жолобов И.В.
+            </p>
+            <p>
+                Панкратова А.К.
+            </p>
+            <p>
+                Пархоменко Г.Д.
+            </p>
+        </div>
+
+        <div class="nav">
+            <h2>Навигация</h2>
+
+            <ul class="nav-menu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/meditationOnline">Медитируй онлайн</a></li>
+                <li><a href="/meditationMusic">Музыка для медитации</a></li>
+                <li><a href="/articlesUseful">Полезные статьи</a></li>
+                <li><a href="/meditationShop">Магазин</a></li>
+            </ul>
+        </div>
+
+        <div class="nav">
+            <h2>Навигация</h2>
+
+            <ul class="nav-menu">
+                <li><a href="/article10">О сне</a></li>
+                <li><a href="/article11">О осознанности</a></li>
+                <li><a href="#">О нас</a></li>
+                <li>
+                    <a href="/article8">Практики</a>
+                </li>
+                <li><a href="/feedback">Обратная связь</a></li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <h2>Контакты</h2>
+            <ul class="contact-list">
+                <li class="contact-list-item">
+                    <a href="#">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Москва, проспект Вернадского, 78</span>
+                    </a>
+                </li>
+                <li class="contact-list-item">
+                    <a href="mailto:izholobov2004@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>izholobov2004@gmail.com</span>
+                    </a>
+                </li>
+                <li class="contact-list-item">
+                    <a href="mailto:pankratova.a.k@edu.mirea.ru">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>pankratova.a.k@edu.mirea.ru</span>
+                    </a>
+                </li>
+                <li class="contact-list-item">
+                    <a href="mailto:mc.goshanskyi@yandex.ru">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>mc.goshanskyi@yandex.ru</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

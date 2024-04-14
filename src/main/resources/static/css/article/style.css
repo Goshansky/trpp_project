@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+*{
+    font-family: 'Arial', sans-serif;
+}
+
+main {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.article-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1200px;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.article-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+main p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.6;
+}
+main li{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Стили для основного контейнера статьи */
+.article-container {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Стили для заголовка статьи */
+.article-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Стили для текста статьи */
+.article-text {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .back-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .article-title {
+        font-size: 22px;
+    }
+
+    .article-text,
+    main p,
+    main li {
+        font-size: 16px;
+    }
+
+    header nav {
+        display: none; /* Скрываем навигацию в хедере */
+    }
+
+    header .menu-icon {
+        display: block; /* Показываем иконку меню-бургера */
+    }
+
+    .footer .footer-container {
+        display: flex;
+        flex-wrap: wrap; /* Элементы футера идут в строку на маленьких экранах */
+    }
+
+    .header-title{
+        font-size: 18px;
+    }
+}
+
+/* Медиа-запрос для планшетов */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .article-container {
+        margin: 20px;
+    }
+
+    .article-title {
+        font-size: 26px;
+    }
+
+    .article-text,
+    main p,
+    main li {
+        font-size: 18px;
+    }
+
+    header nav {
+        display: none; /* Скрываем навигацию в хедере */
+    }
+
+    header .menu-icon {
+        display: block; /* Показываем иконку меню-бургера */
+    }
+
+    .footer .footer-container {
+        display: flex;
+        flex-wrap: wrap; /* Элементы футера идут в строку на маленьких экранах */
+    }
+}

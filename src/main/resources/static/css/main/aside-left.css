@@ -1,0 +1,35 @@
+.sidebar {
+    width: 90%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    max-width: 300px;
+    position: sticky;
+    top: 10px;
+    border-radius: 15px; /* Радиус скругления углов блока */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень блока для добавления глубины */
+}
+
+.sidebar-content {
+    margin-bottom: 20px; /* Отступ между контентными блоками */
+}
+
+.sidebar h2 {
+    font-size: 18px; /* Размер заголовка категорий и статей */
+}
+
+.sidebar ul, ol {
+    /*list-style: none;  Удаление маркера списка */
+    padding: 0; /* Удаление внутренних отступов у списка */
+}
+
+.sidebar li {
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+.sidebar a {
+    text-decoration: none; /* Удаление подчеркивания ссылок */
+    color: #333; /* Цвет текста ссылок */
+    font-weight: bold; /* Жирный шрифт */
+    transition: color 0.3s; /* Плавное изменение цвета текста при наведении */
+}
+

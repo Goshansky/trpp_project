@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+header {
+    background-color: #5b85da; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 20px; /* Внутренний отступ для контента */
+    display: flex; /* Для выравнивания элементов внутри шапки */
+    justify-content: space-between; /* Распределение элементов внутри шапки по горизонтали */
+    align-items: center; /* Выравнивание элементов по вертикали */
+    max-width: 100%;
+    border-radius: 15px; /* Радиус скругления углов блока */
+}
+
+.header-logo img {
+    max-width: 100px; /* Максимальная ширина логотипа */
+}
+
+.header-nav ul {
+    list-style: none; /* Удаление маркера списка */
+    padding: 0;/* Удаление внутренних отступов у списка */
+    display: flex; /* Для расположения элементов меню в ряд */
+}
+.header-nav li {
+    margin-right: 20px; /* Отступ между элементами меню */
+}
+.header-nav a {
+    text-decoration: none; /* Удаление подчеркивания ссылок */
+    color: #fff; /* Цвет текста ссылок */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+#menu-toggle {
+    display: none;
+}
+.menu-icon::after {
+    content: "☰";
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #3498db;
+    padding: 10px;
+}
+
+label[for="menu-toggle"] {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background-color: #3498db;
+    padding: 10px;
+}
+
+
+@media screen and (min-width: 600px) {
+    label[for="menu-toggle"] {
+        display: none;
+    }
+    .header-nav-active{
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    label[for="menu-toggle"] {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #3498db;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        opacity: 0.9;
+    }
+
+    .header-nav ul{
+        display: block;
+    }
+
+    .header-nav li {
+        margin: 0;
+        padding-bottom: 20px;
+        text-align: center;
+        display: block;
+    }
+
+    #menu-toggle:checked + header nav {
+        display: flex;
+    }
+
+    #menu-toggle:checked + header label[for="menu-toggle"]::before {
+        content: "+";
+        transform: rotate(45deg);
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+    header nav {
+        display: none; /* Скрываем навигацию в хедере */
+    }
+
+    header .menu-icon {
+        display: block; /* Показываем иконку меню-бургера */
+    }
+
+    .footer .footer-container {
+        display: flex;
+        flex-wrap: wrap; /* Элементы футера идут в строку на маленьких экранах */
+    }
+
+    .header-title{
+        font-size: 18px;
+    }
+
+
+}
+
+/* Медиа-запрос для планшетов */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+
+
+    header nav {
+        display: none; /* Скрываем навигацию в хедере */
+    }
+
+    header .menu-icon {
+        display: block; /* Показываем иконку меню-бургера */
+    }
+
+    .footer .footer-container {
+        display: flex;
+        flex-wrap: wrap; /* Элементы футера идут в строку на маленьких экранах */
+    }
+}
