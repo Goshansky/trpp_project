@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.2.4'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+
+group = 'com.example'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.postgresql:postgresql:42.2.23'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.example.demo.DemoApplication'
+
+    }
+    enabled = true
+    archiveClassifier = ''
+    archiveBaseName = 'my-app'
+}
+
+tasks.bootJar {
+    mainClassName = 'com.example.demo.DemoApplication'
+}
+
+
+task buildDocker(type: Exec) {
+    dependsOn bootJar
+    workingDir file('docker')
+    commandLine 'docker', 'build', '-t', 'demo', '-f', 'Dockerfile', '..'
+}
+
+task runDocker(type: Exec) {
+    dependsOn buildDocker
+    commandLine 'docker', 'run', '--rm', '-p', '8080:8080', 'demo:latest'
+}

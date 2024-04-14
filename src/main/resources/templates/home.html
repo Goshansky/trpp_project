@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/styles_feedback.css" th:href="@{/css/styles_feedback.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<main>
+    <h1>Оставьте отзыв</h1>
+    <form action="http://localhost:8080/mails/post" id="contact_form" class="contact-form contact-grid" method="POST">
+
+        <div class="form-field name">
+            <label class="label" for="fname">Полное Имя *</label>
+            <input id="fname" type="text" required name="name">
+        </div>
+
+        <div class="form-field email">
+            <label class="label" for="email">email *</label>
+            <input id="email" type="email" required name="email">
+        </div>
+
+        <div class="form-field phone">
+            <label class="label" for="phone">телефон *</label>
+            <input id="phone" type="tel" required name="phone">
+        </div>
+
+        <div class="form-field subject">
+            <label class="label">Город *</label>
+            <select name="city" form="contact_form" required>
+                <option value="Moscow" selected>Moscow</option>
+                <option value="Kazan">Kazan</option>
+                <option value="Saratov">Saratov</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-field comment-box">
+            <label class="label">Cообщение:</label>
+            <textarea name="text" id="message" required></textarea>
+        </div>
+
+        <div class="submit-button">
+            <input id="submit-btn" class="btn" type="submit" value="submit" onclick="askForRegistration()">submit</input>
+        </div>
+
+    </form>
+
+    <script>
+        function askForRegistration() {
+            // Получаем значения полей
+            var fullName = document.getElementById('fname').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var city = document.getElementById('contact_form').elements['city'].value;
+            var message = document.getElementById('message').value;
+
+            // Проверяем, заполнены ли все обязательные поля
+            if (fullName && email && phone && city && message) {
+                // Отображаем всплывающее окно
+                alert('Форма отправлена!');
+
+                // Возвращаем false, чтобы предотвратить отправку формы (если форма отправляется на сервер)
+                return false;
+            } else {
+                // Если не все поля заполнены, можете предпринять другие действия или вернуть true для отправки формы
+                alert('Пожалуйста, заполните все обязательные поля.');
+                return false;
+            }
+        }
+    </script>
+</main>
+</body>
+</html>

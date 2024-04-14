@@ -1,0 +1,310 @@
+*{
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #d9e0ea;
+}
+main {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin-left: 30px;
+    display: flex;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin-top: 20px;
+    margin-right: 80px;
+    gap: 10px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: green;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.cart-container {
+    width: 650px;
+    position: sticky;
+
+}
+.cart-container input{
+    width: 30px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+aside li {
+    margin: 5px 0;
+}
+
+/* Добавлен стиль для кнопки удаления */
+.remove-button {
+    background-color: #ff3333;
+    color: white;
+    padding: 5px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+}
+.delete-all{
+    margin-bottom: 10px;
+}
+
+.remove-button:hover {
+    background-color: #cc0000;
+}
+
+.sort-buttons{
+    margin-left: 200px;
+}
+
+.cont{
+    display: flex;
+}
+body main, body aside{
+    max-width: 100%;
+    /*margin: 0 10px;*/
+    margin-right: 20px;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 480px;
+    position: sticky;
+    top: 0;
+    border-radius: 10px; /* Радиус скругления углов блока */
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+    body main, body aside {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .container {
+        margin: 0;
+    }
+
+    .cards-container {
+        margin-right: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sort-buttons {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .cart-container {
+        width: 100%;
+        max-width: none;
+        position: relative;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: none;
+    }
+
+    body main, body aside{
+        max-width: 100%;
+        /*margin: 0 10px;*/
+        margin-right: 0;
+        padding: 0;
+    }
+    aside{
+        position: static;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cont {
+        display: flex;
+        flex-direction: column-reverse; /* Боковая панель перед main */
+    }
+
+    .sidebar {
+        max-width: 100%;
+        width: 100%;
+        position: static;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    body main {
+        max-width: 100%;
+        margin: 0;
+    }
+    .cart-container{
+        width: 100%;
+
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        margin: 0;
+    }
+
+
+    .cards-container {
+        margin-right: 5px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .sort-buttons {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .cart-container {
+        width: 100%;
+        max-width: none;
+        position: relative;
+    }
+
+    body main, body aside{
+        max-width: 100%;
+        /*margin: 0 10px;*/
+        margin-right: 0;
+        padding: 0;
+    }
+    aside{
+        position: static;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cont {
+        display: flex;
+        flex-direction: column-reverse; /* Боковая панель перед main */
+    }
+
+    .sidebar {
+        max-width: 100%;
+        width: 100%;
+        position: static;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    body main {
+        max-width: 100%;
+        margin: 0;
+    }
+    .cart-container{
+        width: 100%;
+
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+
+    body main, body aside{
+        max-width: 100%;
+        /*margin: 0 10px;*/
+        margin-right: 0;
+        padding: 0;
+    }
+    aside{
+        position: static;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+    main{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cont {
+        display: flex;
+        flex-direction: column-reverse; /* Боковая панель перед main */
+    }
+
+    .sidebar {
+        max-width: 100%;
+        width: 100%;
+        position: static;
+        padding: 10px 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    body main {
+        max-width: 100%;
+        margin: 0;
+    }
+    .cart-container{
+        width: 100%;
+
+    }
+    .container{
+        margin: 0;
+    }
+
+    .cards-container {
+        margin-right: 5px;
+        justify-content: center;
+        width: 100%;
+    }
+}

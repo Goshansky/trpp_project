@@ -1,0 +1,16 @@
+spring:
+  mail:
+    host: 
+    port: 
+    username: 
+    password: 
+    test-connection: true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    sender:
+      email: no-reply@example.com
+      text: no-reply
