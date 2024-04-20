@@ -2,6 +2,13 @@ version: "3.8"
 
 services:
 
+  nginxweb:
+    image: nginx:1.15
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+
   app:
     build: build/libs
     environment:
@@ -12,11 +19,10 @@ services:
       DB_PASSWORD: ${DB_PASS}
       MAIL_USER: ${MAIL_USER}
       MAIL_PASS: ${MAIL_PASS}
-    ports:
-      - "8080:8080"
     restart: always
     depends_on:
       - database
+      - nginxweb
 
   database:
     image: postgres:16
