@@ -1,9 +1,9 @@
 spring:
   mail:
-    host: 
-    port: 
-    username: 
-    password: 
+    host: smtp.gmail.com
+    port: 587
+    username: mirea.project.meditation@gmail.com
+    password: mzwyyhfrwurhfldk
     test-connection: true
     properties:
       mail:
