@@ -1,9 +1,13 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Article;
 import com.example.demo.service.ArticleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -25,7 +29,9 @@ public class MainController {
 
     @GetMapping("/article1")
     public String article1() {
-        return articleService.read(1).toString();
+        Article article = articleService.read(1);
+        // model.addAttribute("articles", articleService.read(1));
+        return article.getContent();
     }
 
 
