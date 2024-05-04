@@ -6,6 +6,11 @@ services:
       - '80:80'
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
+    restart: always
+    depends_on:
+      - database
+      - app
+
   app:
     build: build/libs
     environment:
@@ -19,15 +24,11 @@ services:
     restart: always
     depends_on:
       - database
-      - nginxweb
+
   database:
-    image: postgres:16
+    build: db/
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS}
       POSTGRES_DB: ${DB_NAME}
-    volumes:
-      - meditation_volume:/var/lib/postgresql/data
     restart: always
-volumes:
-  meditation_volume:
