@@ -1,10 +1,14 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.ArticleServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
+    @Autowired
+    private ArticleServiceImpl articleService;
 
     @GetMapping("/")
     public String home() {
@@ -16,10 +20,21 @@ public class MainController {
         return "index";
     }
 
+
+
+
     @GetMapping("/article1")
     public String article1() {
-        return "article1";
+        return articleService.read(1).toString();
     }
+
+
+
+
+
+
+
+
 
     @GetMapping("/article2")
     public String article2() {
