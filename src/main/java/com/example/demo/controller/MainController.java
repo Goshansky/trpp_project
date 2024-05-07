@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -27,77 +28,16 @@ public class MainController {
 
 
 
-
-    @GetMapping("/article1")
-    @ResponseBody
-    public String article1() {
-        Article article = articleService.read(1);
-        // model.addAttribute("articles", articleService.read(1));
-        return article.getContent();
+    @GetMapping("/article/{article_id}")
+    public String article1(@PathVariable String article_id, Model model) {
+        model.addAttribute("article",
+                articleService.read(Integer.parseInt(article_id)));
+        return "article";
     }
 
 
 
 
-
-
-
-
-
-    @GetMapping("/article2")
-    public String article2() {
-        return "article2";
-    }
-
-    @GetMapping("/article3")
-    public String article3() {
-        return "article3";
-    }
-
-    @GetMapping("/article4")
-    public String article4() {
-        return "article4";
-    }
-
-    @GetMapping("/article5")
-    public String article5() {
-        return "article5";
-    }
-
-    @GetMapping("/article6")
-    public String article6() {
-        return "article6";
-    }
-
-    @GetMapping("/article7")
-    public String article7() {
-        return "article7";
-    }
-
-    @GetMapping("/article8")
-    public String article8() {
-        return "article8";
-    }
-
-    @GetMapping("/article9")
-    public String article9() {
-        return "article9";
-    }
-
-    @GetMapping("/article10")
-    public String article10() {
-        return "article10";
-    }
-
-    @GetMapping("/article11")
-    public String article11() {
-        return "article11";
-    }
-
-    @GetMapping("/article12")
-    public String article12() {
-        return "article12";
-    }
     @GetMapping("/articlesUseful")
     public String articlesUseful() {
         return "articlesUseful";
